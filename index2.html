@@ -1,0 +1,49 @@
+<style>
+@font-face {
+  font-family: 'Pixelmix';
+  src: url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.woff");
+  src: url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.eot?#iefix") format("embedded-opentype"), url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.woff2") format("woff2"), url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.woff") format("woff"), url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.ttf") format("truetype"), url("https://aerolab.github.io/nokia-psd/fonts/pixelmix-webfont.svg#pixelmixregular") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+  }
+  body {
+    font-family: 'Pixelmix';
+    color: #000000;
+    font-size: 2em;
+  }
+  
+</style>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<body style="margin:0px;">
+  <div style="display: table-cell; vertical-align: bottom;background:url('https://www.thenews.com.pk/assets/uploads/updates/2021-02-18/l_791464_123137_updates.jpg');height:905px;width:905px;background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <div style="padding:20px 100px 170px 0px;">
+      <div class="pata" style="font-family: 'Oswald', sans-serif;padding-bottom: 20px; overflow-wrap: break-word; background: #201f30b8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: 60px; font-size: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white;"></div>
+      <div class="naam" style="font-family: 'Oswald', sans-serif;font-weight:500; padding-bottom: 20px; overflow-wrap: break-word; background: #3897eab8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: 60px; font-size: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white; margin-top: 20px;"></div>
+
+	</div>
+  </div>
+</body> 
+<script>
+  function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+  var naam = getParameterByName('naam'); 
+var pata = getParameterByName('pata'); 
+var setNaam = document.querySelector('.naam');
+  var setPata = document.querySelector('.pata');
+  var filtered = naam;
+  if (filtered.length > 18) {
+        filtered = filtered.substring(0,17) + "...";
+    }
+ 
+  setNaam.textContent = filtered;
+  setPata.textContent = pata;
+console.log(naam + pata);
+  </script>
