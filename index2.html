@@ -18,12 +18,14 @@
 <body style="margin:0px;">
   <div id="bg"style="display: table-cell; vertical-align: bottom;background:gray;height:905px;width:905px;background-repeat: no-repeat; background-size: cover; background-position: center;">
     <div style="padding:20px 100px 170px 0px;">
-      <div class="pata" style="font-family: 'Oswald', sans-serif;padding-bottom: 20px; overflow-wrap: anywhere; background: #201f30b8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: 60px; font-size: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white;"></div>
-      <div class="naam" style="font-family: 'Oswald', sans-serif;font-weight:500; padding-bottom: 20px; overflow-wrap: anywhere; background: #3897eab8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: 60px; font-size: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white; margin-top: 20px;"></div>
+      <div class="pata" style="font-family: 'Oswald', sans-serif;padding-bottom: 20px; overflow-wrap: anywhere; background: #201f30b8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: auto; font-size: 48px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white;"></div>
+      <div class="naam" style="font-family: 'Oswald', sans-serif;font-weight:500; padding-bottom: 20px; overflow-wrap: anywhere; background: #3897eab8; padding-top: 20px; padding-left: 25px; padding-right: 25px; line-height: auto; font-size: 40px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 9; -webkit-box-orient: vertical; color: white; margin-top: 20px;"></div>
 
 	</div>
   </div>
 </body> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/textFit.js"></script>
 <script>
   function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -40,13 +42,10 @@ var setNaam = document.querySelector('.naam');
   var setPata = document.querySelector('.pata');
  var url =  getParameterByName('url');
  document.getElementById("bg").style.backgroundImage = "url('"+ url +"')";
-
   var filtered = naam;
-  if (filtered.length > 181) {
-        filtered = filtered.substring(0,180) + "...";
-    }
- 
   setNaam.textContent = filtered;
   setPata.textContent = pata;
+  textFit(document.querySelector('.pata')); 
+  textFit(document.querySelector('.naam')); 
 console.log(naam + pata);
   </script>
